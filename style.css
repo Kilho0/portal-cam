@@ -1,0 +1,130 @@
+/* Tira a borda branca que sobrava ao redor do site */
+body {
+   margin: 0;
+    padding: 0;
+    
+    /* 1. Coloca a imagem de fundo */
+    background-image: url('https://i.pinimg.com/originals/94/95/86/9495862ee24fce0fba5e24e8fdaec83d.jpg');
+    
+    /* 2. Faz a imagem cobrir a tela inteira sem achatar */
+    background-size: cover;
+    
+    /* 3. Centraliza a imagem na tela */
+    background-position: center;
+    
+    /* 4. Evita que a imagem se repita caso a tela seja muito grande */
+    background-repeat: no-repeat;
+    
+    /* 5. (Opcional) Deixa o fundo parado enquanto o usuário rola a página para baixo */
+    background-attachment: fixed;
+}
+
+/* O Header principal */
+.meu-cabecalho { 
+    background-color: #7F0102; 
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between; /* Com 3 elementos, o do meio fica centralizado! */
+    align-items: center;
+}
+
+/* Adicione apenas isso para o título não ter margens extras que tirem ele do centro perfeito */
+.meu-cabecalho h1 {
+    margin: 0;
+    font-family: Impact;
+    font-size: 80px;
+}
+
+/* A nova classe que coloca a foto e o texto lado a lado */
+.logo-agrupada {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Cria um espaço de 20px entre a imagem e o texto */
+}
+
+/* Estilo apenas do título */
+.logo-agrupada h1 {
+    margin: 0;
+    font-family: Impact;
+    font-size: 40px;
+}
+
+/* Estilos dos links do menu */
+.meu-cabecalho nav a {
+    color: white; 
+    text-decoration: none; 
+    margin-left: 25px; 
+    font-family: Arial, sans-serif; 
+    font-weight: bold;
+}
+
+/* Efeito de passar o mouse */
+.meu-cabecalho nav a:hover {
+    color: #92b528; /* Aquele tom de verde/amarelo que você escolheu */
+}
+
+
+
+/* Esconder a caixinha de marcar */
+#menu-toggle {
+    display: none;
+}
+
+/* Estilo do ícone de 3 tracinhos */
+.menu-icon {
+    font-size: 35px; /* Tamanho do ícone */
+    cursor: pointer; /* Muda o mouse para a "mãozinha" de clique */
+    color: white;
+}
+
+/* Esconder a lista de links por padrão */
+.menu-links {
+    display: none; /* Mantém o menu escondido */
+    flex-direction: column; /* Coloca os links um embaixo do outro */
+    position: absolute; /* Faz a caixa do menu "flutuar" sobre o site */
+    top: 90px; /* Distância do topo da tela */
+    right: 30px; /* Alinha o menu no canto direito */
+    background-color: #7F0102; /* Fundo vermelho do CAM */
+    padding: 20px;
+    border-radius: 8px; /* Arredonda as pontas da caixa */
+    list-style: none; /* Tira aquelas bolinhas padrão de listas HTML */
+    margin: 0;
+}
+
+/* A MÁGICA: Mostrar o menu APENAS quando o checkbox for marcado (clicado) */
+#menu-toggle:checked ~ .menu-links {
+    display: flex;
+}
+
+/* Estilo dos links dentro do menu */
+.menu-links li {
+    margin-bottom: 15px; /* Espaço entre os links */
+}
+
+.menu-links a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Efeito ao passar o mouse */
+.menu-links a:hover {
+    color: #92b528;
+}
+
+
+/* Organizando o conteúdo principal da página */
+main {
+    max-width: 800px; /* Limita a largura da caixa de texto (pode aumentar ou diminuir se quiser) */
+    margin: 50px auto; /* O 'auto' nas laterais é o que faz a caixa ficar exatamente no meio da tela! O '50px' dá um espaço no topo e embaixo. */
+    padding: 0 20px; /* Dá um espacinho interno para o texto não colar nas bordas do celular */
+    
+    text-align: justify; /* Deixa o texto retinho nas margens esquerda e direita */
+    
+    font-family: Arial, sans-serif; /* Muda a fonte para ficar mais agradável */
+    line-height: 1.6; /* Aumenta um pouquinho o espaço entre as linhas do texto para facilitar a leitura */
+    font-size: 18px; /* Tamanho da letra */
+}
