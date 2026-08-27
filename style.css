@@ -128,3 +128,33 @@ main {
     line-height: 1.6; /* Aumenta um pouquinho o espaço entre as linhas do texto para facilitar a leitura */
     font-size: 18px; /* Tamanho da letra */
 }
+
+@media (max-width: 768px) {
+    
+    /* 1. Diminui os espaços laterais do cabeçalho para nada ficar espremido */
+    .meu-cabecalho {
+        padding: 15px; 
+    }
+
+    /* 2. Diminui o tamanho do título principal para não quebrar a linha */
+    .meu-cabecalho h1 {
+        font-size: 30px; /* Lembra que tínhamos aumentado? Aqui a gente reduz só pro celular */
+    }
+
+    /* 3. Deixa a logo um pouquinho menor */
+    .meu-cabecalho img {
+        width: 60px; 
+    }
+
+    /* 4. Ajusta o menu que desliza para não ficar cortado */
+    .menu-links {
+        right: 15px; /* Deixa a caixa vermelha do menu um pouco mais colada na borda direita */
+        top: 75px; 
+    }
+    
+    /* 5. Ajusta o texto principal para ler melhor no celular */
+    main {
+        padding: 0 15px;
+        font-size: 16px;
+    }
+}
