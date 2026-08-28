@@ -1,42 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-       <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sobre o CAM</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <header class="meu-cabecalho">
-    
-    <!-- 1º elemento: Vai para a esquerda -->
-    <img width="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqgKZCzcsq3hC1s36zxSSFZV-3oDdjFojt9dfBA_O9DbgLtfMx6WvlY_V3&s=10" alt="Logo do CAM">
-    
-    <!-- 2º elemento: Fica centralizado no meio -->
-    <h1>Sobre</h1>
-    
-    <!-- 3º elemento: Vai para a direita -->
-   <nav class="menu-hamburguer">
-    <!-- A caixinha de seleção invisível -->
-    <input type="checkbox" id="menu-toggle">
-    
-    <!-- O ícone de 3 tracinhos -->
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    
-    <!-- A lista de links que vai aparecer e sumir -->
-    <ul class="menu-links">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="academico.html">Acadêmico</a></li>
-        <li><a href="acervo.html">Acervo Histórico</a></li>
-        <li><a href="eventos.html">Eventos</a></li>
-        <li><a href="contato.html">Contato</a></li>
-    </ul>
-</nav>
-    
-</header>
-</nav>
+    <header class="meu-cabecalho">
+        
+        <!-- 1º elemento: Vai para a esquerda -->
+        <img width="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqgKZCzcsq3hC1s36zxSSFZV-3oDdjFojt9dfBA_O9DbgLtfMx6WvlY_V3&s=10" alt="Logo do CAM">
+        
+        <!-- 2º elemento: Fica centralizado no meio -->
+        <h1>Sobre</h1>
+        
+        <!-- 3º elemento: Vai para a direita -->
+        <nav class="menu-hamburguer">
+            <!-- A caixinha de seleção invisível -->
+            <input type="checkbox" id="menu-toggle">
+            
+            <!-- O ícone de 3 tracinhos -->
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            
+            <!-- A lista de links que vai aparecer e sumir -->
+            <ul class="menu-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="academico.html">Acadêmico</a></li>
+                <li><a href="acervo.html">Acervo Histórico</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quasi, itaque sit maxime error vitae optio id excepturi, qui non voluptatibus nihil amet dolorum? Dolores nulla sequi similique sapiente quaerat aspernatur nisi blanditiis quisquam et placeat ab cum aperiam necessitatibus, itaque consequatur voluptate delectus ullam molestiae dolorum vitae. Nesciunt, impedit.</p>
+    <main>
+        <p>
+            O Centro Acadêmico Mecânica e Mecatrônica, também conhecido como CAM, é uma instituição feita por alunos para alunos com objetivo de facilitar e ajudar na trajetória acadêmica dos alunos ao longo da graduação e após também. <br><br>
+            Fundado em 22 de setembro de 1987, o CAM conta com <span id="anos-de-cam"></span> anos de muita história na Poli!
+        </p>
+    </main>
+
+    <!-- O motor JavaScript que faz a conta matemática e atualiza a idade -->
+<script>
+        // 1. Define a data exata de fundação (Ano, Mês, Dia)
+        // Atenção: No JavaScript, os meses começam no 0! Então Janeiro = 0, ..., Setembro = 8.
+        let dataFundacao = new Date(1987, 8, 22); 
+        
+        // 2. Pega a data exata de hoje
+        let dataAtual = new Date();
+        
+        // 3. Faz a conta inicial apenas com os anos
+        let idade = dataAtual.getFullYear() - dataFundacao.getFullYear();
+        
+        // 4. Verifica se o aniversário já passou este ano
+        let mesAtual = dataAtual.getMonth();
+        let diaAtual = dataAtual.getDate();
+        let mesFundacao = dataFundacao.getMonth();
+        let diaFundacao = dataFundacao.getDate();
+        
+        // Se o mês atual for antes de setembro, OU se for setembro mas antes do dia 22...
+        if (mesAtual < mesFundacao || (mesAtual === mesFundacao && diaAtual < diaFundacao)) {
+            idade--; // ...tira 1 ano da conta, pois ainda não fez aniversário!
+        }
+        
+        // 5. Injeta o resultado certinho na tela
+        document.getElementById("anos-de-cam").innerText = idade;
+    </script>
+
+    
 </body>
 </html>

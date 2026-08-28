@@ -1,105 +1,81 @@
-/* Tira a borda branca que sobrava ao redor do site */
+/* =========================================
+   1. CONFIGURAÇÕES GERAIS (Fundo Padrão)
+   ========================================= */
 body {
-   margin: 0;
+    margin: 0;
     padding: 0;
     
-    /* 1. Coloca a imagem de fundo */
+    /* Fundo padrão para todas as páginas que NÃO tiverem uma classe específica */
     background-image: url('https://i.pinimg.com/originals/94/95/86/9495862ee24fce0fba5e24e8fdaec83d.jpg');
-    
-    /* 2. Faz a imagem cobrir a tela inteira sem achatar */
     background-size: cover;
-    
-    /* 3. Centraliza a imagem na tela */
     background-position: center;
-    
-    /* 4. Evita que a imagem se repita caso a tela seja muito grande */
     background-repeat: no-repeat;
-    
-    /* 5. (Opcional) Deixa o fundo parado enquanto o usuário rola a página para baixo */
     background-attachment: fixed;
 }
 
-/* O Header principal */
+/* =========================================
+   2. FUNDOS ESPECÍFICOS (Páginas Individuais)
+   ========================================= */
+/* Fundo exclusivo da página de Acervo Histórico */
+.pagina-acervo {
+    /* Troque o link abaixo pela foto que quiser usar no acervo */
+    background-image: url('../imagens/fundo-corvo-velho.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* =========================================
+   3. CABEÇALHO E TÍTULO
+   ========================================= */
 .meu-cabecalho { 
     background-color: #7F0102; 
     color: white;
     padding: 20px 40px;
     display: flex;
-    justify-content: space-between; /* Com 3 elementos, o do meio fica centralizado! */
+    justify-content: space-between; 
     align-items: center;
 }
 
-/* Adicione apenas isso para o título não ter margens extras que tirem ele do centro perfeito */
 .meu-cabecalho h1 {
     margin: 0;
     font-family: Impact;
     font-size: 80px;
 }
 
-/* A nova classe que coloca a foto e o texto lado a lado */
-.logo-agrupada {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Cria um espaço de 20px entre a imagem e o texto */
-}
-
-/* Estilo apenas do título */
-.logo-agrupada h1 {
-    margin: 0;
-    font-family: Impact;
-    font-size: 40px;
-}
-
-/* Estilos dos links do menu */
-.meu-cabecalho nav a {
-    color: white; 
-    text-decoration: none; 
-    margin-left: 25px; 
-    font-family: Arial, sans-serif; 
-    font-weight: bold;
-}
-
-/* Efeito de passar o mouse */
-.meu-cabecalho nav a:hover {
-    color: #92b528; /* Aquele tom de verde/amarelo que você escolheu */
-}
-
-
-
-/* Esconder a caixinha de marcar */
+/* =========================================
+   4. MENU HAMBÚRGUER
+   ========================================= */
 #menu-toggle {
     display: none;
 }
 
-/* Estilo do ícone de 3 tracinhos */
 .menu-icon {
-    font-size: 35px; /* Tamanho do ícone */
-    cursor: pointer; /* Muda o mouse para a "mãozinha" de clique */
+    font-size: 35px;
+    cursor: pointer;
     color: white;
 }
 
-/* Esconder a lista de links por padrão */
 .menu-links {
-    display: none; /* Mantém o menu escondido */
-    flex-direction: column; /* Coloca os links um embaixo do outro */
-    position: absolute; /* Faz a caixa do menu "flutuar" sobre o site */
-    top: 90px; /* Distância do topo da tela */
-    right: 30px; /* Alinha o menu no canto direito */
-    background-color: #7F0102; /* Fundo vermelho do CAM */
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    right: 30px;
+    background-color: #7F0102;
     padding: 20px;
-    border-radius: 8px; /* Arredonda as pontas da caixa */
-    list-style: none; /* Tira aquelas bolinhas padrão de listas HTML */
+    border-radius: 8px;
+    list-style: none;
     margin: 0;
 }
 
-/* A MÁGICA: Mostrar o menu APENAS quando o checkbox for marcado (clicado) */
 #menu-toggle:checked ~ .menu-links {
     display: flex;
 }
 
-/* Estilo dos links dentro do menu */
 .menu-links li {
-    margin-bottom: 15px; /* Espaço entre os links */
+    margin-bottom: 15px;
 }
 
 .menu-links a {
@@ -110,51 +86,60 @@ body {
     font-size: 18px;
 }
 
-/* Efeito ao passar o mouse */
 .menu-links a:hover {
     color: #92b528;
 }
 
-
-/* Organizando o conteúdo principal da página */
+/* =========================================
+   5. CONTEÚDO PRINCIPAL (Main)
+   ========================================= */
 main {
-    max-width: 800px; /* Limita a largura da caixa de texto (pode aumentar ou diminuir se quiser) */
-    margin: 50px auto; /* O 'auto' nas laterais é o que faz a caixa ficar exatamente no meio da tela! O '50px' dá um espaço no topo e embaixo. */
-    padding: 0 20px; /* Dá um espacinho interno para o texto não colar nas bordas do celular */
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px; /* Preenchimento interno para o texto não colar na borda branca */
+    text-align: justify;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 18px;
     
-    text-align: justify; /* Deixa o texto retinho nas margens esquerda e direita */
-    
-    font-family: Arial, sans-serif; /* Muda a fonte para ficar mais agradável */
-    line-height: 1.6; /* Aumenta um pouquinho o espaço entre as linhas do texto para facilitar a leitura */
-    font-size: 18px; /* Tamanho da letra */
+    /* Fundo branco transparente (85% opaco) para o texto ficar legível por cima da foto de fundo */
+    background-color: rgba(255, 255, 255, 0.85); 
+    border-radius: 10px;
 }
 
+/* Centraliza as imagens que estiverem dentro da área de texto */
+main img {
+    display: block;
+    margin: 40px auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* =========================================
+   6. RESPONSIVIDADE (Para Celular)
+   ========================================= */
 @media (max-width: 768px) {
-    
-    /* 1. Diminui os espaços laterais do cabeçalho para nada ficar espremido */
     .meu-cabecalho {
         padding: 15px; 
     }
 
-    /* 2. Diminui o tamanho do título principal para não quebrar a linha */
     .meu-cabecalho h1 {
-        font-size: 30px; /* Lembra que tínhamos aumentado? Aqui a gente reduz só pro celular */
+        font-size: 30px; 
     }
 
-    /* 3. Deixa a logo um pouquinho menor */
     .meu-cabecalho img {
         width: 60px; 
     }
 
-    /* 4. Ajusta o menu que desliza para não ficar cortado */
     .menu-links {
-        right: 15px; /* Deixa a caixa vermelha do menu um pouco mais colada na borda direita */
+        right: 15px; 
         top: 75px; 
     }
     
-    /* 5. Ajusta o texto principal para ler melhor no celular */
     main {
-        padding: 0 15px;
+        padding: 20px;
         font-size: 16px;
+        margin: 20px auto; /* Reduz a distância do topo quando estiver no celular */
+        width: 90%; /* Garante que a caixa branca não encoste totalmente nas bordas da tela */
     }
 }
