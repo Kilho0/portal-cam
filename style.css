@@ -17,7 +17,7 @@ body {
    2. FUNDOS ESPECÍFICOS (Páginas Individuais)
    ========================================= */
 /* Fundo exclusivo da página de Acervo Histórico */
-.pagina-acervo {
+.pagina-corvo-cpm{
     /* Troque o link abaixo pela foto que quiser usar no acervo */
     background-image: url('imagens/fundo-corvo-velho.png');
     background-size: cover;
@@ -26,6 +26,39 @@ body {
     background-attachment: fixed;
 }
 
+.pagina-corvo-puto {
+    /* Troque o link abaixo pela foto que quiser usar no acervo */
+    background-image: url('imagens/fundo-corvo-puto.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.pagina-cam {
+    /* Troque o link abaixo pela foto que quiser usar no acervo */
+    background-image: url('imagens/fundo-cam.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.pagina-corvo-galinha{
+    /* Troque o link abaixo pela foto que quiser usar no acervo */
+    background-image: url('imagens/fundo-corvo-galinha.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.pagina-atleticorvo{
+    /* Troque o link abaixo pela foto que quiser usar no acervo */
+    background-image: url('imagens/fundo-atleticorvo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 /* =========================================
    3. CABEÇALHO E TÍTULO
    ========================================= */
