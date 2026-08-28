@@ -19,7 +19,7 @@ body {
 /* Fundo exclusivo da página de Acervo Histórico */
 .pagina-acervo {
     /* Troque o link abaixo pela foto que quiser usar no acervo */
-    background-image: url('../imagens/fundo-corvo-velho.png');
+    background-image: url('imagens/fundo-corvo-velho.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -142,4 +142,55 @@ main img {
         margin: 20px auto; /* Reduz a distância do topo quando estiver no celular */
         width: 90%; /* Garante que a caixa branca não encoste totalmente nas bordas da tela */
     }
+}
+
+
+/* =========================================
+   7. ESTILO DAS TABELAS (Acervo Histórico)
+   ========================================= */
+table {
+    width: 100%; /* Faz a tabela ocupar toda a largura da caixa branca */
+    border-collapse: collapse; /* Junta as bordas para não ficar com linha dupla */
+    margin-top: 30px; /* Dá um respiro entre o parágrafo de cima e a tabela */
+}
+
+th, td {
+    border: 1px solid #cccccc; /* Cria uma borda cinza bem fininha e elegante */
+    padding: 15px; /* Dá espaço interno para o texto respirar */
+    text-align: center; /* Centraliza o texto em todas as colunas */
+}
+
+th {
+    background-color: #7F0102; /* Pinta o cabeçalho com o vermelho do CAM */
+    color: white; 
+    font-size: 20px;
+    font-family: Impact, sans-serif; /* Combina a fonte do cabeçalho com o título do site */
+    letter-spacing: 1px;
+}
+
+/* Cria um efeito "Zebrado": pinta as linhas pares de um cinza super claro para facilitar a leitura */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Dá um destaque na linha inteira quando o usuário passa o mouse por cima */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Transforma os links "Acesse aqui" em pequenos botões */
+td a {
+    display: inline-block;
+    background-color: #92b528; /* O verde que você já usava no efeito do menu */
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px; /* Arredonda as pontinhas do botão */
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+/* Efeito ao passar o mouse em cima do botão "Acesse aqui" */
+td a:hover {
+    background-color: #5c0001; /* Fica um vermelho mais escuro */
 }
